@@ -1,14 +1,47 @@
-body {
-  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
-    'Arial', sans-serif;
-  margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.65;
-  word-break: break-word;
-  font-kerning: auto;
-  font-variant: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  hyphens: auto;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background: #fff;
+    color: #151A3A;
+    font-family: 'Instrument Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  :focus-visible { outline: 2px solid #2438E0; outline-offset: 3px; }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; }
+  .bg-cobalt { background: #2438E0; }
+  .text-cobalt { color: #2438E0; }
+  .bg-mist { background: #EDF0FB; }
+  .text-ink { color: #151A3A; }
+  .text-mute { color: #5A6079; }
+  .border-line { border-color: #DCE0EF; }
+}
+
+/* Un seul moment animé : la requête se tape dans la barre de recherche */
+.typed { display: inline-block; clip-path: inset(0 100% 0 0); animation: type 1.8s steps(24, end) .4s forwards; }
+.caret { animation: blink 1s steps(1) infinite; }
+@keyframes type { to { clip-path: inset(0 0 0 0); } }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .typed { animation: none; clip-path: none; }
+  .caret { animation: none; }
+}
+
+/* Aperçu de site qui défile au survol : la capture pleine page glisse de haut en bas */
+.shot-img { top: 0; transform: translateY(0); transition: top .7s ease, transform .7s ease; }
+.group:hover .shot-img,
+.group:focus-visible .shot-img {
+  top: 100%;
+  transform: translateY(-100%);
+  transition: top var(--scroll, 8s) linear, transform var(--scroll, 8s) linear;
+}
+@media (prefers-reduced-motion: reduce) {
+  .group:hover .shot-img, .group:focus-visible .shot-img { top: 0; transform: none; }
 }
