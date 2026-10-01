@@ -1,13 +1,12 @@
 // pages/index.js
 import Head from 'next/head';
-import Logo from '../components/Logo';
 import { Check } from 'lucide-react';
 import Portfolio from '../components/Portfolio';
 import TechMarquee from '../components/TechMarquee';
 import Pricing from '../components/Pricing';
-
-const EMAIL = 'ilyass.webdesign@gmail.com';
-const WHATSAPP = '212600000000'; // TODO : remplacer par votre vrai numéro
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { EMAIL, WHATSAPP } from '../lib/site';
 
 const projects = [
   {
@@ -71,18 +70,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
       </Head>
 
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-line">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Logo />
-          <nav className="hidden md:flex gap-8 text-sm text-mute">
-            <a href="#methode" className="hover:text-cobalt">Méthode</a>
-            <a href="#realisations" className="hover:text-cobalt">Réalisations</a>
-            <a href="#offres" className="hover:text-cobalt">Offres</a>
-            <a href="#faq" className="hover:text-cobalt">Questions</a>
-          </nav>
-          <a href="#contact" className="px-4 py-2 rounded-full bg-cobalt text-white text-sm font-semibold hover:opacity-90">Demander un devis</a>
-        </div>
-      </header>
+      <Header />
 
       <main>
         {/* Hero : la page de résultats Google est le décor */}
@@ -258,12 +246,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="px-6 py-8">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-mute">
-          <Logo />
-          <p>© {new Date().getFullYear()} SearchSnippets.com — BlueCode Agency</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
