@@ -45,3 +45,10 @@
 @media (prefers-reduced-motion: reduce) {
   .group:hover .shot-img, .group:focus-visible .shot-img { top: 0; transform: none; }
 }
+
+/* Bandeau de logos défilant */
+.marquee { -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.marquee-track { display: flex; width: max-content; animation: marquee 34s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }

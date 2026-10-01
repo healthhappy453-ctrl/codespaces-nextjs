@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Logo from '../components/Logo';
 import { Check } from 'lucide-react';
 import Portfolio from '../components/Portfolio';
+import TechMarquee from '../components/TechMarquee';
 
 const EMAIL = 'contact@searchsnippets.com';
 const WHATSAPP = '212600000000'; // TODO : remplacer par votre vrai numéro
@@ -56,6 +57,21 @@ const faqs = [
   ['Comment se passe une commande ?', "Un échange de cadrage de 20 minutes, un devis avec acompte, une maquette à valider, puis le développement."],
 ];
 
+const why = [
+  ['Un cadrage avant le design', "Nous partons de vos clients, de votre offre et de vos concurrents locaux avant de dessiner la première page."],
+  ['Un affichage pensé pour le mobile', "Une grande partie des visites vient du téléphone, souvent avec une connexion moyenne. Les pages restent lisibles et rapides dans ces conditions."],
+  ['Un code conçu pour Google', "Structure des pages, données structurées, vitesse de chargement et HTTPS sont traitées dès le développement, pas ajoutées après coup."],
+  ['Des contenus qui font agir', "Textes clairs, formulaires courts, boutons d'appel et WhatsApp : chaque page mène vers un contact ou une commande."],
+  ['Un suivi après la mise en ligne', "Hébergement, sauvegardes, corrections et évolutions : le site continue de fonctionner et de s'améliorer."],
+];
+
+// À CONFIRMER : n'affichez que des engagements que vous tiendrez réellement.
+const commitments = [
+  ['Au devis', 'Un délai de livraison écrit', 'Le calendrier figure dans le devis : 15 jours pour une vitrine, 4 à 6 semaines pour une boutique.'],
+  ['30 jours', 'De support après la mise en ligne', 'Corrections et questions techniques sans frais pendant un mois.'],
+  ['30 min', 'De formation à la prise en main', 'Une session en visio pour apprendre à mettre à jour votre site seul.'],
+];
+
 export default function Home() {
   return (
     <>
@@ -63,7 +79,7 @@ export default function Home() {
         <title>SearchSnippets.com | BlueCode Agency — Sites Next.js sur mesure</title>
         <meta name="description" content="BlueCode Agency crée des sites Next.js rapides et bien référencés : vitrines, e-commerce et SaaS, avec code source remis au client." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -129,6 +145,8 @@ export default function Home() {
           </div>
         </section>
 
+        <TechMarquee />
+
         {/* Différences */}
         <section className="max-w-6xl mx-auto px-6 py-24">
           <h2 className="font-display font-bold text-3xl sm:text-4xl tracking-tight max-w-2xl">Ce qui change quand le site est écrit sur mesure</h2>
@@ -185,6 +203,46 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Engagement */}
+        <section className="bg-mist">
+          <div className="max-w-6xl mx-auto px-6 py-24">
+            <h2 className="font-display font-bold text-3xl sm:text-4xl tracking-tight">Notre engagement</h2>
+            <p className="mt-4 text-mute max-w-xl">Ce que vous pouvez attendre de nous, par écrit, avant de signer.</p>
+            <div className="mt-12 grid md:grid-cols-3 md:divide-x md:divide-[#DCE0EF]">
+              {commitments.map(([big, label, text]) => (
+                <div key={label} className="py-6 md:py-0 md:px-8 md:first:pl-0 md:last:pr-0 border-t md:border-t-0 border-line">
+                  <div className="font-display font-bold text-4xl sm:text-5xl text-cobalt">{big}</div>
+                  <h3 className="mt-3 font-display font-bold text-lg">{label}</h3>
+                  <p className="mt-2 text-mute leading-relaxed">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pourquoi : texte de fond pour le référencement */}
+        <section className="max-w-6xl mx-auto px-6 py-24">
+          <div className="rounded-3xl bg-[#151A3A] text-white p-8 sm:p-14 grid lg:grid-cols-[1fr_1.1fr] gap-12">
+            <div>
+              <h2 className="font-display font-bold text-3xl sm:text-4xl tracking-tight leading-[1.1]">Créer son site web au Maroc : ce qu'un bon prestataire doit vous apporter</h2>
+              <p className="mt-6 text-white/75 leading-relaxed">Votre site est souvent le premier endroit où un client vérifie que vous existez, que vous êtes sérieux et que vous répondez à son besoin. Un site sur mesure réunit trois choses : un design clair, une technique rapide et une présence sur Google.</p>
+              <p className="mt-4 text-white/75 leading-relaxed">Bien conçu, il devient un outil de prospection : il attire des demandes qualifiées et rassure avant même le premier appel.</p>
+              <a href="#contact" className="inline-block mt-8 px-7 py-3.5 rounded-full bg-white text-cobalt font-semibold hover:bg-mist">Demander un devis gratuit</a>
+            </div>
+            <ul className="space-y-6">
+              {why.map(([t, d]) => (
+                <li key={t} className="flex gap-4">
+                  <Check className="w-5 h-5 mt-1 shrink-0 text-[#8FA0FF]" aria-hidden="true" />
+                  <div>
+                    <h3 className="font-display font-bold text-lg">{t}</h3>
+                    <p className="mt-1 text-white/70 leading-relaxed">{d}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
