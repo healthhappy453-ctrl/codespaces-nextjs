@@ -52,3 +52,23 @@
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* Section contact : fond encre + halo cobalt discret + filigrane */
+.contact {
+  background:
+    radial-gradient(60% 80% at 85% 0%, rgba(36, 56, 224, .28), transparent 70%),
+    #0E1230;
+}
+.watermark {
+  position: absolute;
+  left: 0; right: 0; bottom: -.14em;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1;
+  font-size: clamp(3.5rem, 15vw, 15rem);
+  letter-spacing: -.04em;
+  color: rgba(255, 255, 255, .035);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, .09);
+  user-select: none;
+  pointer-events: none;
+}

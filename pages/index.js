@@ -4,8 +4,9 @@ import Logo from '../components/Logo';
 import { Check } from 'lucide-react';
 import Portfolio from '../components/Portfolio';
 import TechMarquee from '../components/TechMarquee';
+import Pricing from '../components/Pricing';
 
-const EMAIL = 'contact@searchsnippets.com';
+const EMAIL = 'ilyass.webdesign@gmail.com';
 const WHATSAPP = '212600000000'; // TODO : remplacer par votre vrai numéro
 
 const projects = [
@@ -35,21 +36,6 @@ const differences = [
   ['Le code est à vous', "À la livraison, vous recevez le code source complet et tous les accès. Vous pouvez confier la suite à qui vous voulez."],
 ];
 
-const offers = [
-  {
-    name: 'Site vitrine', who: 'Indépendants, cabinets, PME', price: '18 000 MAD', sub: '≈ 1 800 € · livré en 15 jours',
-    items: ['Design sur mesure, sans template', 'Affichage soigné sur iOS et Android', 'Données structurées et balisage SEO de base', 'Score PageSpeed visé : 90+, mesuré à la livraison'],
-  },
-  {
-    name: 'E-commerce et SaaS', who: 'Marques en croissance', price: '36 000 MAD', sub: '≈ 3 600 € · 4 à 6 semaines', highlight: true,
-    items: ['Boutique headless Next.js et React', 'Paiement CMI, Stripe ou PayPal, stocks synchronisés', 'Données structurées pour les fiches produits', 'Formation vidéo et assistance prioritaire'],
-  },
-  {
-    name: 'Accompagnement SEO', who: 'Sites déjà en ligne', price: 'Sur devis', sub: 'Abonnement mensuel',
-    items: ['Audit technique de votre domaine', 'Correction des Core Web Vitals', 'Déploiement des données structurées', 'Rapport mensuel : visibilité et contacts générés'],
-  },
-];
-
 const faqs = [
   ['Quelle différence avec une agence classique ?', "Nous ne posons pas un thème sur votre site. Chaque page est développée en Next.js pour votre activité : moins de dépendances, un chargement rapide et un code qui vous appartient."],
   ['Quel lien entre SearchSnippets.com et BlueCode Agency ?', "SearchSnippets.com est notre plateforme web et SEO. BlueCode Agency est l'équipe d'ingénieurs et de designers qui conçoit et suit vos projets."],
@@ -67,7 +53,7 @@ const why = [
 
 // À CONFIRMER : n'affichez que des engagements que vous tiendrez réellement.
 const commitments = [
-  ['Au devis', 'Un délai de livraison écrit', 'Le calendrier figure dans le devis : 15 jours pour une vitrine, 4 à 6 semaines pour une boutique.'],
+  ['Au devis', 'Un délai de livraison écrit', 'Le calendrier figure dans le devis, avant toute signature : vous savez quand votre site sera en ligne.'],
   ['30 jours', 'De support après la mise en ligne', 'Corrections et questions techniques sans frais pendant un mois.'],
   ['30 min', 'De formation à la prise en main', 'Une session en visio pour apprendre à mettre à jour votre site seul.'],
 ];
@@ -129,7 +115,7 @@ export default function Home() {
                 <p className="mt-1.5 text-[19px] leading-snug text-[#1A0DAB]">BlueCode Agency — Sites Next.js sur mesure</p>
                 <p className="mt-1 text-sm text-mute leading-relaxed">Vitrines, e-commerce et SaaS. Code source remis au client, données structurées incluses.</p>
                 <div className="mt-3 flex flex-wrap gap-2 text-xs">
-                  {['Site vitrine · 18 000 MAD', 'E-commerce · 36 000 MAD', 'Audit SEO'].map((t) => (
+                  {['Landing · 1 399 MAD', 'Vitrine · 2 899 MAD', 'E-commerce · Sur devis'].map((t) => (
                     <span key={t} className="px-3 py-1.5 rounded-full bg-mist text-cobalt font-semibold">{t}</span>
                   ))}
                 </div>
@@ -180,31 +166,8 @@ export default function Home() {
 
         <Portfolio projects={projects} />
 
-        {/* Offres */}
-        <section id="offres" className="max-w-6xl mx-auto px-6 py-24">
-          <h2 className="font-display font-bold text-3xl sm:text-4xl tracking-tight max-w-2xl">Des prix affichés, un périmètre écrit</h2>
-          <p className="mt-4 text-mute max-w-xl">Le devis détaille ce qui est inclus. Le code source vous est remis dans tous les cas.</p>
-          <div className="mt-10">
-            {offers.map((o) => (
-              <div key={o.name} className={`grid md:grid-cols-[1fr_1.5fr_auto] gap-6 md:gap-10 p-6 md:p-8 items-start ${o.highlight ? 'bg-mist rounded-3xl' : 'border-t border-line'}`}>
-                <div>
-                  <h3 className="font-display font-bold text-2xl">{o.name}</h3>
-                  <p className="mt-1 text-sm text-mute">{o.who}</p>
-                </div>
-                <ul className="space-y-2.5 text-[15px]">
-                  {o.items.map((it) => (
-                    <li key={it} className="flex gap-2.5"><Check className="w-4 h-4 mt-1 text-cobalt shrink-0" aria-hidden="true" />{it}</li>
-                  ))}
-                </ul>
-                <div className="md:text-right">
-                  <div className="font-display font-bold text-3xl">{o.price}</div>
-                  <div className="text-sm text-mute mt-1">{o.sub}</div>
-                  <a href="#contact" className={`inline-block mt-4 px-5 py-2.5 rounded-full text-sm font-semibold ${o.highlight ? 'bg-cobalt text-white' : 'border border-cobalt text-cobalt hover:bg-mist'}`}>Demander ce devis</a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Offres : tableau comparatif */}
+        <Pricing />
 
         {/* Engagement */}
         <section className="bg-mist">
@@ -265,12 +228,31 @@ export default function Home() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="bg-cobalt text-white">
-          <div className="max-w-6xl mx-auto px-6 py-24">
-            <h2 className="font-display font-bold text-4xl sm:text-5xl tracking-tight max-w-3xl leading-[1.05]">Décrivez votre projet en deux lignes. Nous répondons sous 24 h ouvrées.</h2>
+        <section id="contact" className="contact relative overflow-hidden text-white">
+          {/* Filigrane : nom de domaine géant et très discret */}
+          <div aria-hidden="true" className="watermark font-display font-bold">
+            searchsnippets
+          </div>
+
+          <div className="relative max-w-6xl mx-auto px-6 py-24 sm:py-32">
+            <p className="flex items-center gap-2.5 text-sm font-semibold tracking-wide text-white/60">
+              <span className="w-2 h-2 rounded-full bg-[#5B6DFF]" aria-hidden="true" />
+              Contact
+            </p>
+
+            <h2 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight max-w-3xl leading-[1.05]">
+              Décrivez votre projet en deux lignes.{' '}
+              <span className="text-white/45">Nous répondons sous </span>
+              <span className="text-[#8FA0FF]">24 h ouvrées.</span>
+            </h2>
+
             <div className="mt-10 flex flex-wrap gap-4">
-              <a href={`mailto:${EMAIL}`} className="px-7 py-3.5 rounded-full bg-white text-cobalt font-semibold hover:bg-mist">{EMAIL}</a>
-              <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="px-7 py-3.5 rounded-full border border-white/60 font-semibold hover:bg-white/10">Écrire sur WhatsApp</a>
+              <a href={`mailto:${EMAIL}`} className="px-7 py-3.5 rounded-full bg-white text-ink font-semibold hover:bg-mist transition-colors">
+                {EMAIL}
+              </a>
+              <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="px-7 py-3.5 rounded-full border border-white/25 font-semibold hover:bg-white/10 transition-colors">
+                Écrire sur WhatsApp
+              </a>
             </div>
           </div>
         </section>
