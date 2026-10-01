@@ -109,7 +109,7 @@ export default function Home() {
 
               <div className="mt-6">
                 <div className="flex items-center gap-2 text-xs text-mute">
-                  <span className="w-6 h-6 rounded-full bg-cobalt text-white grid place-items-center font-bold text-[10px]">BC</span>
+                  <span className="w-6 h-6 rounded-full bg-mist grid place-items-center"><img src="/logo-mark.svg" alt="" className="w-4 h-4" /></span>
                   <span>searchsnippets.com</span>
                 </div>
                 <p className="mt-1.5 text-[19px] leading-snug text-[#1A0DAB]">BlueCode Agency — Sites Next.js sur mesure</p>
