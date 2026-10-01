@@ -1,5 +1,6 @@
 // pages/contact.js
 import PageShell from '../components/PageShell';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 import { EMAIL, WHATSAPP, WHATSAPP_DISPLAY, ADDRESS } from '../lib/site';
 
 const brief = [
@@ -24,7 +25,7 @@ export default function Contact() {
           </h1>
           <div className="mt-10 flex flex-wrap gap-4">
             <a href={`mailto:${EMAIL}`} className="px-7 py-3.5 rounded-full bg-white text-ink font-semibold hover:bg-mist transition-colors">{EMAIL}</a>
-            <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="px-7 py-3.5 rounded-full border border-white/25 font-semibold hover:bg-white/10 transition-colors">Écrire sur WhatsApp</a>
+            <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-white/25 font-semibold hover:bg-white/10 transition-colors"><WhatsAppIcon className="w-5 h-5 text-[#25D366]" />Écrire sur WhatsApp</a>
           </div>
         </div>
       </section>

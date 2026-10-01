@@ -1,6 +1,8 @@
 // components/Footer.js
 import Link from 'next/link';
 import Logo from './Logo';
+import WhatsAppIcon from './WhatsAppIcon';
+import WhatsAppButton from './WhatsAppButton';
 import { EMAIL, WHATSAPP, WHATSAPP_DISPLAY, ADDRESS } from '../lib/site';
 
 const linkClass = 'text-mute hover:text-cobalt';
@@ -40,7 +42,7 @@ export default function Footer() {
             <h2 className="font-display font-bold text-base">Nous contacter</h2>
             <ul className="mt-4 space-y-2.5 text-sm text-mute">
               <li><a href={`mailto:${EMAIL}`} className={linkClass}>{EMAIL}</a></li>
-              <li><a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className={linkClass}>WhatsApp : {WHATSAPP_DISPLAY}</a></li>
+              <li><a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className={`${linkClass} inline-flex items-center gap-2`}><WhatsAppIcon className="w-4 h-4 text-[#25D366]" />{WHATSAPP_DISPLAY}</a></li>
               <li>{ADDRESS}</li>
               <li>Réponse sous 24 h ouvrées</li>
             </ul>
@@ -52,6 +54,7 @@ export default function Footer() {
           <p>Fait à Agadir, avec Next.js</p>
         </div>
       </div>
+      <WhatsAppButton />
     </footer>
   );
 }

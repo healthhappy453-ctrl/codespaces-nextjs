@@ -14,7 +14,7 @@ export default function Header() {
           <Link href="/#faq" className="hover:text-cobalt">Questions</Link>
           <Link href="/about" className="hover:text-cobalt">À propos</Link>
         </nav>
-        <Link href="/contact" className="px-4 py-2 rounded-full bg-cobalt text-white text-sm font-semibold hover:opacity-90">Demander un devis</Link>
+        <Link href="/contact" className="px-4 py-2 rounded-full bg-cobalt text-white text-sm font-semibold hover:opacity-90">Contactez-nous</Link>
       </div>
     </header>
   );
