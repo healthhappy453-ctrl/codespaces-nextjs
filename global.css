@@ -15,7 +15,7 @@
 }
 
 @layer utilities {
-  .font-display { font-family: 'Bricolage Grotesque', 'Instrument Sans', sans-serif; }
+  .font-display { font-family: var(--font-display), 'Bricolage Grotesque', 'Instrument Sans', sans-serif; }
   .bg-cobalt { background: #2438E0; }
   .text-cobalt { color: #2438E0; }
   .bg-mist { background: #EDF0FB; }
