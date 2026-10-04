@@ -21,7 +21,7 @@ export default function Contact() {
         <div className="relative max-w-6xl mx-auto px-6 py-20 sm:py-28">
           <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight max-w-3xl leading-[1.05]">
             Décrivez votre projet en deux lignes.{' '}
-            <span className="text-white/45">Nous répondons sous </span>
+            <span className="text-white/60">Nous répondons sous </span>
             <span className="text-[#8FA0FF]">24 h ouvrées.</span>
           </h1>
           <div className="mt-10 flex flex-wrap gap-4">

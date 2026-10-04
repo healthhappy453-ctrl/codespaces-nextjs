@@ -93,7 +93,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white text-ink p-5 sm:p-6 shadow-2xl" aria-label="Exemple illustratif de résultats de recherche">
+            <div className="rounded-2xl bg-white text-ink p-5 sm:p-6 shadow-2xl" role="group" aria-label="Exemple illustratif de résultats de recherche">
               <div className="flex items-center gap-3 rounded-full border border-line px-4 py-2.5 text-[15px]">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5A6079" strokeWidth="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
                 <span><span className="typed">agence web next.js maroc</span><span className="caret text-cobalt">|</span></span>
@@ -113,9 +113,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-5 border-t border-line opacity-60">
+              <div className="mt-6 pt-5 border-t border-line">
                 <div className="text-xs text-mute">monsite-wordpress.ma</div>
-                <p className="mt-1 text-[17px] text-[#1A0DAB]">Accueil – Mon site</p>
+                <p className="mt-1 text-[17px] text-[#6A63B8]">Accueil – Mon site</p>
                 <p className="mt-1 text-sm text-mute">Bienvenue sur notre site. Découvrez nos services et contactez-nous…</p>
               </div>
               <p className="mt-5 text-[11px] text-mute">Exemple illustratif : un résultat enrichi se distingue d'un résultat standard.</p>
@@ -227,14 +227,14 @@ export default function Home() {
           </div>
 
           <div className="relative max-w-6xl mx-auto px-6 py-24 sm:py-32">
-            <p className="flex items-center gap-2.5 text-sm font-semibold tracking-wide text-white/60">
+            <p className="flex items-center gap-2.5 text-sm font-semibold tracking-wide text-white/70">
               <span className="w-2 h-2 rounded-full bg-[#5B6DFF]" aria-hidden="true" />
               Contact
             </p>
 
             <h2 className="mt-6 font-display font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight max-w-3xl leading-[1.05]">
               Décrivez votre projet en deux lignes.{' '}
-              <span className="text-white/45">Nous répondons sous </span>
+              <span className="text-white/60">Nous répondons sous </span>
               <span className="text-[#8FA0FF]">24 h ouvrées.</span>
             </h2>
 

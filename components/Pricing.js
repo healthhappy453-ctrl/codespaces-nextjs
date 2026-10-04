@@ -28,7 +28,7 @@ const rows = [
 ];
 
 function Cell({ v }) {
-  if (v === '—') return <span className="text-mute/50" aria-label="Non inclus">—</span>;
+  if (v === '—') return <span className="text-mute" aria-label="Non inclus">—</span>;
   if (v === '✓') return <Check className="w-4 h-4 text-cobalt inline" aria-label="Inclus" />;
   if (v.startsWith('✓ ')) {
     return (
