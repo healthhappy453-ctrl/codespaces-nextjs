@@ -5,11 +5,11 @@ import { EMAIL, ADDRESS } from '../lib/site';
 
 const sections = [
   ['Qui est responsable de vos données', `Le site searchsnippets.com est édité par BlueCode Agency (SearchSnippets.com), ${ADDRESS}. Pour toute question sur vos données, écrivez-nous à ${EMAIL}.`],
-  ['Les données que nous recevons', "Ce site ne contient pas de formulaire. Nous ne recevons des données que si vous nous écrivez par e-mail ou sur WhatsApp : votre nom, vos coordonnées et les informations sur votre projet que vous choisissez de nous transmettre."],
+  ['Les données que nous recevons', "Ce site ne contient pas de formulaire. Nous ne recevons des données que si vous nous écrivez par e-mail ou sur WhatsApp : votre nom, vos coordonnées et les informations sur votre projet que vous choisissez de nous transmettre. Par ailleurs, la mesure d'audience décrite plus bas collecte des statistiques de visite."],
   ['Pourquoi nous les utilisons', "Uniquement pour répondre à votre message, préparer un devis et assurer le suivi de votre projet si nous travaillons ensemble. Nous ne vendons pas vos données et ne les utilisons pas pour de la publicité."],
   ['Combien de temps nous les gardons', "Le temps nécessaire au traitement de votre demande, puis pendant la durée de la relation commerciale et les obligations légales qui s'y rattachent. Vous pouvez demander leur suppression à tout moment."],
-  ['Cookies et mesure d\'audience', "Le site n'utilise ni cookies publicitaires ni outil de suivi. Si nous en ajoutons un, cette page sera mise à jour et, si la loi l'exige, votre accord sera demandé."],
-  ['Services tiers', "Le site est hébergé sur Vercel. Les polices de caractères sont chargées depuis Google Fonts : votre adresse IP est alors transmise à Google, comme pour tout site qui utilise ce service. Les liens vers des sites externes (par exemple nos réalisations) relèvent de la politique de confidentialité de ces sites."],
+  ['Cookies et mesure d\'audience', "Le site utilise Google Analytics pour mesurer l'audience : pages consultées, provenance approximative et type d'appareil. Cet outil dépose des cookies et transmet ces données de navigation à Google. Nous n'utilisons aucun cookie publicitaire. Vous pouvez vous opposer à cette mesure en bloquant les cookies dans votre navigateur ou avec l'extension de désactivation de Google Analytics."],
+  ['Services tiers', "Le site est hébergé sur Vercel et la mesure d'audience est assurée par Google Analytics. Les polices de caractères sont chargées depuis Google Fonts : votre adresse IP est alors transmise à Google, comme pour tout site qui utilise ce service. Les liens vers des sites externes (par exemple nos réalisations) relèvent de la politique de confidentialité de ces sites."],
   ['Vos droits', `Conformément à la loi marocaine n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, vous disposez d'un droit d'accès, de rectification et d'opposition. Pour l'exercer, écrivez à ${EMAIL}. Vous pouvez aussi vous adresser à la Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP).`],
   ['Mises à jour', "Cette page peut évoluer. La date de dernière mise à jour figure en haut de la page."],
 ];
@@ -24,7 +24,7 @@ export default function Privacy() {
       <section className="max-w-3xl mx-auto px-6 pt-20 pb-24 lg:pt-28">
         <h1 className="font-display font-bold text-4xl sm:text-5xl tracking-tight leading-[1.05]">Politique de confidentialité</h1>
         <p className="mt-4 text-sm text-mute">Dernière mise à jour : octobre 2026</p>
-        <p className="mt-8 text-lg text-mute leading-relaxed">En résumé : nous ne recevons que les informations que vous nous envoyez vous-même, nous les utilisons pour répondre à votre projet, et vous pouvez en demander la suppression quand vous voulez.</p>
+        <p className="mt-8 text-lg text-mute leading-relaxed">En résumé : hormis des statistiques de visite, nous ne recevons que les informations que vous nous envoyez vous-même, nous les utilisons pour répondre à votre projet, et vous pouvez en demander la suppression quand vous voulez.</p>
 
         <div className="mt-12 space-y-10">
           {sections.map(([t, d]) => (
