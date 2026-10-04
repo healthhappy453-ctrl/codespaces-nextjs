@@ -17,6 +17,7 @@ const sections = [
 export default function Privacy() {
   return (
     <PageShell
+      path="/privacy"
       title="Politique de confidentialité | SearchSnippets.com"
       description="Quelles données BlueCode Agency reçoit, pourquoi, combien de temps, et comment exercer vos droits selon la loi marocaine 09-08."
     >

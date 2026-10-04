@@ -32,6 +32,7 @@ export default function Footer() {
           <nav aria-label="Informations">
             <h2 className="font-display font-bold text-base">L'agence</h2>
             <ul className="mt-4 space-y-2.5 text-sm">
+              <li><Link href="/blog" className={linkClass}>Blog</Link></li>
               <li><Link href="/about" className={linkClass}>À propos</Link></li>
               <li><Link href="/contact" className={linkClass}>Contact</Link></li>
               <li><Link href="/privacy" className={linkClass}>Confidentialité</Link></li>

@@ -13,6 +13,7 @@ const brief = [
 export default function Contact() {
   return (
     <PageShell
+      path="/contact"
       title="Contact | SearchSnippets.com — BlueCode Agency"
       description="Contactez BlueCode Agency par e-mail ou WhatsApp pour un devis de site Next.js. Réponse sous 24 h ouvrées. Aït Melloul, Agadir."
     >

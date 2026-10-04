@@ -6,6 +6,8 @@ import TechMarquee from '../components/TechMarquee';
 import Pricing from '../components/Pricing';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Seo from '../components/Seo';
+import { homeJsonLd } from '../lib/schema';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 import { EMAIL, WHATSAPP } from '../lib/site';
 
@@ -61,9 +63,13 @@ const commitments = [
 export default function Home() {
   return (
     <>
+      <Seo
+        path="/"
+        title="SearchSnippets.com | BlueCode Agency — Sites Next.js sur mesure à Agadir"
+        description="BlueCode Agency crée des sites Next.js rapides et bien référencés à Agadir : vitrines, e-commerce et SaaS, avec code source remis au client."
+        jsonLd={homeJsonLd}
+      />
       <Head>
-        <title>SearchSnippets.com | BlueCode Agency — Sites Next.js sur mesure</title>
-        <meta name="description" content="BlueCode Agency crée des sites Next.js rapides et bien référencés : vitrines, e-commerce et SaaS, avec code source remis au client." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

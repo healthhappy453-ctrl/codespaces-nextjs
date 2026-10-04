@@ -12,6 +12,7 @@ const principles = [
 export default function About() {
   return (
     <PageShell
+      path="/about"
       title="À propos | SearchSnippets.com — BlueCode Agency"
       description="BlueCode Agency conçoit des sites Next.js sur mesure depuis Aït Melloul, Agadir, pour des entreprises au Maroc et à l'export."
     >

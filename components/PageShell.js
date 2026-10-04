@@ -2,13 +2,13 @@
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
+import Seo from './Seo';
 
-export default function PageShell({ title, description, children }) {
+export default function PageShell({ title, description, path, ogType, jsonLd, children }) {
   return (
     <>
+      <Seo title={title} description={description} path={path} ogType={ogType} jsonLd={jsonLd} />
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
