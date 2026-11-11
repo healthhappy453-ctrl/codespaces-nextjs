@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   body {
     background: #fff;
     color: #151A3A;
@@ -12,6 +12,17 @@
     overflow-x: hidden;
   }
   :focus-visible { outline: 2px solid #2438E0; outline-offset: 3px; }
+  /* Anneau de focus blanc sur les fonds sombres (cobalt sur cobalt est invisible) */
+  .bg-cobalt :focus-visible,
+  .contact :focus-visible,
+  [class*="bg-[#151A3A]"] :focus-visible { outline-color: #fff; }
+
+  /* Équilibrage des lignes */
+  h1, h2, h3 { text-wrap: balance; }
+  p, li { text-wrap: pretty; }
+
+  /* Transitions douces */
+  a, button { transition: color .2s ease, background-color .2s ease, border-color .2s ease, opacity .2s ease, text-decoration-color .2s ease; }
 }
 
 @layer utilities {
