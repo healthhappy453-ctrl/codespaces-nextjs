@@ -124,3 +124,80 @@ h1, h2 { text-wrap: balance; }
     }
   }
 }
+
+/* === UX3 === */
+
+/* 1. Torche : halo et grille du hero suivent le curseur */
+.hero-bg {
+  background:
+    radial-gradient(420px circle at var(--hx, 72%) var(--hy, 30%), rgba(170, 182, 255, .38), transparent 65%),
+    radial-gradient(60% 75% at 82% 12%, rgba(143, 160, 255, .45), transparent 70%),
+    #2438E0;
+}
+.hero-bg::after {
+  background-image: linear-gradient(rgba(255,255,255,.16) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.16) 1px, transparent 1px);
+  -webkit-mask-image: radial-gradient(50% 60% at 72% 28%, rgba(0,0,0,.35), transparent 75%), radial-gradient(300px circle at var(--hx, 72%) var(--hy, 30%), #000, transparent 70%);
+  mask-image: radial-gradient(50% 60% at 72% 28%, rgba(0,0,0,.35), transparent 75%), radial-gradient(300px circle at var(--hx, 72%) var(--hy, 30%), #000, transparent 70%);
+}
+
+/* 2. Carte de résultats : inclinaison 3D */
+.serp-card {
+  animation-fill-mode: backwards;
+  transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .35s cubic-bezier(.2,.7,.2,1);
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+.serp-card > div:first-child { translate: 0 0 8px; }
+.serp-card .serp-r1 { translate: 0 0 22px; }
+
+/* 3. Cartes à halo (utilisées pour la section des différences) */
+.spot { position: relative; transition: translate .3s ease, box-shadow .3s ease, border-color .3s ease; }
+.spot::before { content: ""; position: absolute; left: 28px; top: -1px; width: 44px; height: 3px; background: #2438E0; border-radius: 0 0 3px 3px; transition: width .35s ease; }
+.spot::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s ease; background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), rgba(36, 56, 224, .11), transparent 65%); }
+.spot:hover { translate: 0 -4px; border-color: #2438E0; box-shadow: 0 28px 44px -26px rgba(36, 56, 224, .45); }
+.spot:hover::before { width: 96px; }
+.spot:hover::after { opacity: 1; }
+
+/* 4. Boutons magnétiques : transitions compatibles */
+main a.rounded-full { transition: translate .25s ease-out, background-color .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease; }
+
+/* 5. Tableau des offres : la ligne survolée s'éclaire */
+#offres tbody tr { transition: box-shadow .2s ease; }
+#offres tbody tr:hover > * { box-shadow: inset 0 0 0 999px rgba(36, 56, 224, .05); }
+
+/* 6. Contact : aurore lente */
+.contact::before {
+  content: ""; position: absolute; inset: -25%; pointer-events: none;
+  background:
+    radial-gradient(38% 48% at 22% 32%, rgba(91, 109, 255, .42), transparent 70%),
+    radial-gradient(34% 44% at 80% 68%, rgba(143, 160, 255, .26), transparent 70%);
+  filter: blur(28px);
+  animation: ux-aurora 22s ease-in-out infinite alternate;
+}
+@keyframes ux-aurora { from { transform: translate3d(-5%, -4%, 0) scale(1); } to { transform: translate3d(6%, 5%, 0) scale(1.15); } }
+@media (prefers-reduced-motion: reduce) { .contact::before { animation: none; } }
+
+/* 7. Défilement : barre de progression, ombre de l'en-tête, fil de la méthode */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    body::before {
+      content: ""; position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 60; pointer-events: none;
+      background: linear-gradient(90deg, #2438E0, #8FA0FF);
+      transform-origin: 0 50%;
+      animation: ux-progress linear both; animation-timeline: scroll(root block);
+    }
+    header.sticky { animation: ux-header linear both; animation-timeline: scroll(root block); animation-range: 0 140px; }
+    @keyframes ux-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes ux-header { from { box-shadow: 0 0 0 rgba(14, 18, 48, 0); } to { box-shadow: 0 14px 34px -18px rgba(14, 18, 48, .32); } }
+  }
+  @supports (animation-timeline: view()) {
+    #methode ol { position: relative; isolation: isolate; view-timeline-name: --ux-steps; view-timeline-axis: block; }
+    #methode ol::before {
+      content: ""; position: absolute; left: 17px; top: 18px; bottom: 44px; width: 2px; z-index: -1;
+      background: linear-gradient(#2438E0, #8FA0FF); transform-origin: top;
+      animation: ux-line linear both; animation-timeline: --ux-steps; animation-range: entry 10% cover 55%;
+    }
+    @keyframes ux-line { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  }
+}

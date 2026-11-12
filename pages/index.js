@@ -6,6 +6,7 @@ import TechMarquee from '../components/TechMarquee';
 import Pricing from '../components/Pricing';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Fx from '../components/Fx';
 import Seo from '../components/Seo';
 import { homeJsonLd } from '../lib/schema';
 import WhatsAppIcon from '../components/WhatsAppIcon';
@@ -75,6 +76,7 @@ export default function Home() {
       </Head>
 
       <Header />
+      <Fx />
 
       <main>
         {/* Hero : la page de résultats Google est le décor */}
@@ -128,9 +130,9 @@ export default function Home() {
         {/* Différences */}
         <section className="max-w-6xl mx-auto px-6 py-24">
           <h2 className="font-display font-bold text-3xl sm:text-4xl tracking-tight max-w-2xl">Ce qui change quand le site est écrit sur mesure</h2>
-          <div className="mt-12 grid md:grid-cols-3 gap-x-12 gap-y-10">
+          <div className="mt-12 grid md:grid-cols-3 gap-5">
             {differences.map(([t, d]) => (
-              <div key={t}>
+              <div key={t} className="spot rounded-2xl border border-line bg-white p-7 sm:p-8">
                 <h3 className="font-display font-bold text-xl">{t}</h3>
                 <p className="mt-3 text-mute leading-relaxed">{d}</p>
               </div>
