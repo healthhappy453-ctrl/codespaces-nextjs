@@ -201,3 +201,52 @@ main a.rounded-full { transition: translate .25s ease-out, background-color .2s 
     @keyframes ux-line { from { transform: scaleY(0); } to { transform: scaleY(1); } }
   }
 }
+
+/* === UX4 : "Voir ce que Google lit" === */
+.gv-btn {
+  position: fixed; left: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px)); z-index: 45;
+  display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 18px 0 14px;
+  border: 1px solid rgba(255,255,255,.16); border-radius: 999px; cursor: pointer;
+  background: #0E1230; color: #fff; font: 600 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace;
+  box-shadow: 0 14px 34px -12px rgba(14,18,48,.6); transition: translate .2s ease, background-color .2s ease;
+}
+.gv-btn:hover { translate: 0 -2px; background: #1B2150; }
+.gv-dot { width: 8px; height: 8px; border-radius: 50%; background: #5BF0A0; box-shadow: 0 0 0 0 rgba(91,240,160,.6); animation: gv-pulse 2.4s ease-out infinite; }
+@keyframes gv-pulse { 70% { box-shadow: 0 0 0 9px rgba(91,240,160,0); } 100% { box-shadow: 0 0 0 0 rgba(91,240,160,0); } }
+.gv-panel {
+  position: fixed; left: 16px; bottom: calc(72px + env(safe-area-inset-bottom, 0px)); z-index: 46;
+  width: min(540px, calc(100vw - 32px)); max-height: min(72vh, 660px); display: flex; flex-direction: column;
+  background: #0E1230; color: #E6E9FF; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; overflow: hidden;
+  box-shadow: 0 40px 80px -24px rgba(8,10,40,.7); animation: gv-pop .35s cubic-bezier(.2,.8,.2,1);
+}
+@keyframes gv-pop { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+.gv-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,.1); font: 600 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; }
+.gv-x { width: 32px; height: 32px; border-radius: 8px; border: 0; background: transparent; color: #E6E9FF; font-size: 22px; line-height: 1; cursor: pointer; }
+.gv-x:hover { background: rgba(255,255,255,.1); }
+.gv-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,.1); font-size: 13px; }
+.gv-switch { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; }
+.gv-switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.gv-track { position: relative; width: 36px; height: 20px; border-radius: 999px; background: rgba(255,255,255,.2); transition: background-color .2s ease; flex: none; }
+.gv-track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; border-radius: 50%; background: #fff; transition: translate .2s ease; }
+.gv-switch input:checked + .gv-track { background: #FFC247; }
+.gv-switch input:checked + .gv-track::after { translate: 16px 0; background: #0E1230; }
+.gv-switch input:focus-visible + .gv-track { outline: 2px solid #fff; outline-offset: 3px; }
+.gv-copy { border: 1px solid rgba(255,255,255,.25); background: transparent; color: #fff; border-radius: 8px; padding: 6px 12px; font-size: 12px; cursor: pointer; }
+.gv-copy:hover { background: rgba(255,255,255,.1); }
+.gv-code { margin: 0; padding: 16px; overflow: auto; flex: 1; min-height: 120px; font: 12.5px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; tab-size: 2; white-space: pre; animation: gv-reveal 1.1s cubic-bezier(.3,.7,.2,1); }
+@keyframes gv-reveal { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+.gv-code:focus-visible, .gv-btn:focus-visible, .gv-x:focus-visible, .gv-copy:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.gv-key { color: #8FA0FF; } .gv-at { color: #FFC247; } .gv-str { color: #9BE9A8; } .gv-num { color: #FF9E7A; } .gv-kw { color: #C9A6FF; }
+.gv-note { margin: 0; padding: 10px 16px; border-top: 1px solid rgba(255,255,255,.1); font-size: 12px; color: rgba(230,233,255,.65); }
+@media (prefers-reduced-motion: reduce) { .gv-panel, .gv-code, .gv-dot { animation: none; } }
+@media (min-width: 900px) { .gv-panel { left: auto; right: 16px; bottom: calc(92px + env(safe-area-inset-bottom, 0px)); } }
+
+/* Mode "repérage" : les titres que Google utilise pour comprendre la structure */
+html.xray main :is(h1, h2, h3) { position: relative; outline: 1.5px dashed #FFC247; outline-offset: 6px; }
+html.xray main :is(h1, h2, h3)::before {
+  position: absolute; left: 0; top: -30px; padding: 4px 7px; border-radius: 5px; background: #FFC247; color: #0E1230;
+  font: 700 11px/1 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: nowrap; pointer-events: none;
+}
+html.xray main h1::before { content: "<h1>"; }
+html.xray main h2::before { content: "<h2>"; }
+html.xray main h3::before { content: "<h3>"; }
