@@ -143,7 +143,7 @@ export default function Home() {
         {/* Méthode : une vraie séquence, donc numérotée */}
         <section id="methode" className="bg-mist">
           <div className="max-w-6xl mx-auto px-6 py-24 grid lg:grid-cols-[1fr_1.4fr] gap-12">
-            <h2 className="font-display font-bold text-3xl sm:text-4xl tracking-tight">Un projet se déroule en quatre étapes</h2>
+            <h2 className="font-display font-bold text-3xl sm:text-4xl tracking-tight lg:sticky lg:top-28 lg:self-start">Un projet se déroule en quatre étapes</h2>
             <ol className="space-y-8">
               {steps.map(([t, d], i) => (
                 <li key={t} className="flex gap-5">
@@ -171,7 +171,7 @@ export default function Home() {
             <div className="mt-12 grid md:grid-cols-3 md:divide-x md:divide-[#DCE0EF]">
               {commitments.map(([big, label, text]) => (
                 <div key={label} className="py-6 md:py-0 md:px-8 md:first:pl-0 md:last:pr-0 border-t md:border-t-0 border-line">
-                  <div className="font-display font-bold text-4xl sm:text-5xl text-cobalt">{big}</div>
+                  <div className="stat font-display font-bold text-5xl sm:text-6xl tracking-tight text-cobalt">{big}</div>
                   <h3 className="mt-3 font-display font-bold text-lg">{label}</h3>
                   <p className="mt-2 text-mute leading-relaxed">{text}</p>
                 </div>
@@ -183,7 +183,7 @@ export default function Home() {
         {/* Pourquoi : texte de fond pour le référencement */}
         <section className="max-w-6xl mx-auto px-6 py-24">
           <div className="rounded-3xl bg-[#151A3A] text-white p-8 sm:p-14 grid lg:grid-cols-[1fr_1.1fr] gap-12">
-            <div>
+            <div className="lg:sticky lg:top-28 lg:self-start">
               <h2 className="font-display font-bold text-3xl sm:text-4xl tracking-tight leading-[1.1]">Créer son site web au Maroc : ce qu'un bon prestataire doit vous apporter</h2>
               <p className="mt-6 text-white/75 leading-relaxed">Votre site est souvent le premier endroit où un client vérifie que vous existez, que vous êtes sérieux et que vous répondez à son besoin. Un site sur mesure réunit trois choses : un design clair, une technique rapide et une présence sur Google.</p>
               <p className="mt-4 text-white/75 leading-relaxed">Bien conçu, il devient un outil de prospection : il attire des demandes qualifiées et rassure avant même le premier appel.</p>

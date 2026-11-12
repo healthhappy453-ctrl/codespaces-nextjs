@@ -201,3 +201,13 @@ main a.rounded-full { transition: translate .25s ease-out, background-color .2s 
     @keyframes ux-line { from { transform: scaleY(0); } to { transform: scaleY(1); } }
   }
 }
+
+/* === UX5 : tableau des offres, chiffres de l'engagement === */
+.plan-hi { box-shadow: inset 0 4px 0 #2438E0; }
+#offres tbody tr { transition: box-shadow .2s ease; }
+#offres tbody tr:hover > * { box-shadow: inset 0 0 0 999px rgba(36, 56, 224, .05); }
+.stat {
+  background: linear-gradient(135deg, #2438E0 20%, #7F92FF 95%);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}

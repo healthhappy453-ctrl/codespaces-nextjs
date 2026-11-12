@@ -62,7 +62,7 @@ export default function Pricing() {
                 <th
                   key={p.name}
                   scope="col"
-                  className={`pb-6 px-4 align-bottom font-normal ${p.highlight ? 'bg-mist rounded-t-3xl pt-6' : ''}`}
+                  className={`pt-6 pb-6 px-4 align-bottom font-normal ${p.highlight ? 'bg-mist rounded-t-3xl plan-hi' : ''}`}
                 >
                   <div className="font-display font-bold text-lg text-cobalt">{p.name}</div>
                   <div className="mt-1 font-display font-bold text-2xl text-ink whitespace-nowrap">
@@ -71,8 +71,8 @@ export default function Pricing() {
                   <div className="mt-1 text-xs text-mute font-normal">{p.note}</div>
                   <a
                     href="#contact"
-                    className={`inline-block mt-4 px-5 py-2.5 rounded-full text-sm font-semibold ${
-                      p.highlight ? 'bg-cobalt text-white hover:opacity-90' : 'border border-cobalt text-cobalt hover:bg-mist'
+                    className={`inline-block mt-4 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap ${
+                      p.highlight ? 'bg-cobalt text-white hover:opacity-90' : 'border border-[#2438E0] text-cobalt hover:bg-mist'
                     }`}
                   >
                     {p.price ? 'Choisir cette offre' : 'Demander un devis'}
