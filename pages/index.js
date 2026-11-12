@@ -6,7 +6,6 @@ import TechMarquee from '../components/TechMarquee';
 import Pricing from '../components/Pricing';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import GoogleView from '../components/GoogleView';
 import Fx from '../components/Fx';
 import Seo from '../components/Seo';
 import { homeJsonLd } from '../lib/schema';
@@ -253,7 +252,6 @@ export default function Home() {
         </section>
       </main>
 
-      <GoogleView />
       <Footer />
     </>
   );
