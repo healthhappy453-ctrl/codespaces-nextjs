@@ -78,7 +78,7 @@ export default function Home() {
 
       <main>
         {/* Hero : la page de résultats Google est le décor */}
-        <section className="bg-cobalt text-white">
+        <section className="hero-bg bg-cobalt text-white">
           <div className="max-w-6xl mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-[1.05fr_1fr] gap-14 items-center">
             <div>
               <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
@@ -93,27 +93,27 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-white text-ink p-5 sm:p-6 shadow-2xl" role="group" aria-label="Exemple illustratif de résultats de recherche">
+            <div className="serp-card rounded-2xl bg-white text-ink p-5 sm:p-6 shadow-2xl" role="group" aria-label="Exemple illustratif de résultats de recherche">
               <div className="flex items-center gap-3 rounded-full border border-line px-4 py-2.5 text-[15px]">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#5A6079" strokeWidth="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
                 <span><span className="typed">agence web next.js maroc</span><span className="caret text-cobalt">|</span></span>
               </div>
 
-              <div className="mt-6">
+              <div className="mt-6 serp-r1">
                 <div className="flex items-center gap-2 text-xs text-mute">
                   <span className="w-6 h-6 rounded-full bg-mist grid place-items-center"><img src="/logo-mark.svg" alt="" className="w-4 h-4" /></span>
                   <span>searchsnippets.com</span>
                 </div>
                 <p className="mt-1.5 text-[19px] leading-snug text-[#1A0DAB]">BlueCode Agency — Sites Next.js sur mesure</p>
                 <p className="mt-1 text-sm text-mute leading-relaxed">Vitrines, e-commerce et SaaS. Code source remis au client, données structurées incluses.</p>
-                <div className="mt-3 flex flex-wrap gap-2 text-xs">
+                <div className="mt-3 flex flex-wrap gap-2 text-xs serp-chips">
                   {['Landing · 1 399 MAD', 'Vitrine · 2 899 MAD', 'E-commerce · Sur devis'].map((t) => (
                     <span key={t} className="px-3 py-1.5 rounded-full bg-mist text-cobalt font-semibold">{t}</span>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-6 pt-5 border-t border-line">
+              <div className="mt-6 pt-5 border-t border-line serp-r2">
                 <div className="text-xs text-mute">monsite-wordpress.ma</div>
                 <p className="mt-1 text-[17px] text-[#6A63B8]">Accueil – Mon site</p>
                 <p className="mt-1 text-sm text-mute">Bienvenue sur notre site. Découvrez nos services et contactez-nous…</p>
