@@ -109,7 +109,7 @@ export default function Home() {
                 <p className="mt-1.5 text-[19px] leading-snug text-[#1A0DAB]">BlueCode Agency — Sites Next.js sur mesure</p>
                 <p className="mt-1 text-sm text-mute leading-relaxed">Vitrines, e-commerce et SaaS. Code source remis au client, données structurées incluses.</p>
                 <div className="mt-3 flex flex-wrap gap-2 text-xs serp-chips">
-                  {['Landing · 1 399 MAD', 'Vitrine · 2 899 MAD', 'E-commerce · Sur devis'].map((t) => (
+                  {['Landing · 2 799 MAD', 'Vitrine · 6 999 MAD', 'E-commerce · Sur devis'].map((t) => (
                     <span key={t} className="px-3 py-1.5 rounded-full bg-mist text-cobalt font-semibold">{t}</span>
                   ))}
                 </div>

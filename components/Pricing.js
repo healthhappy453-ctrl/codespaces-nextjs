@@ -2,9 +2,9 @@
 import { Check } from 'lucide-react';
 
 const plans = [
-  { name: 'Essentiel', price: '1 399', note: 'Landing page, livrée vite' },
-  { name: 'Standard', price: '2 899', note: 'Vitrine complète avec blog' },
-  { name: 'Premium', price: '8 999', note: 'Vitrine avancée, multilingue', highlight: true },
+  { name: 'Essentiel', price: '2 799', note: 'Landing page, livrée vite' },
+  { name: 'Standard', price: '6 999', note: 'Vitrine complète avec blog' },
+  { name: 'Premium', price: '12 499', note: 'Vitrine avancée, multilingue', highlight: true },
   { name: 'Sur mesure', price: null, note: 'E-commerce, SaaS, application' },
 ];
 
